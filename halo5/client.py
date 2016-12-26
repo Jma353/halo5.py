@@ -6,3 +6,4 @@ class Client(object):
 
   def __init__(self, **kwargs):
     self.sub_key = kwargs.get('sub_key')
+    self.metadata = Metadata (self.sub_key)
