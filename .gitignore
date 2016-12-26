@@ -1,3 +1,4 @@
-*.pyc
+*/*.pyc
 *.egg-info
 venv
+*.DS_Store 
