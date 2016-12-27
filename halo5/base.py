@@ -1,6 +1,5 @@
 # Essential for interacting with REST API
 import requests
-import simplejson
 
 # For encoding requests
 try:
@@ -14,10 +13,13 @@ class Base(object):
   def __init__(self, url_ext, sub_key):
     self.base_url = 'https://www.haloapi.com/' + url_ext
     self.sub_key = sub_key
+    self.debug = True
 
   def get(self, **kwargs):
-    param_str = urlencode(kwargs.get('params', {}))
+    param_str = urlencode (kwargs.get('params', {}))
     url = kwargs.get('url')
     headers = kwargs.get('headers', {})
     headers['Ocp-Apim-Subscription-Key'] = self.sub_key
-    return requests.get(url + param_str, headers=headers).json()
+    total_url = url + param_str
+    if (self.debug): print 'Requested: ' + total_url
+    return requests.get(total_url, headers=headers)
