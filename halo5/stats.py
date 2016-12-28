@@ -15,9 +15,9 @@ class Stats(Base):
   # Private
   def _service_record (self, game_type, players = [], season_id = None):
     full_url = self.base_url + 'servicerecords/' + game_type + '?'
-    params = { players : ','.join(players) }
+    params = { players : ','.join([quote_plus(p) for p in players]) }
     if season_id is not None: params['seasonId'] = season_id
-    return self.get (params = params, url = full_url)
+    return self.get (params = params, url = full_url).json()
 
   def events_for_match (self, match_id):
     return self.get (
@@ -26,7 +26,7 @@ class Stats(Base):
   def matches_for_player (self, player, modes = None, start = 0, count = 25):
     params = { 'start' : start, 'count' : count }
     if modes is not None: params['modes'] = modes
-    full_url = self.base_url + player + '/matches?'
+    full_url = self.base_url + quote_plus (player) + '/matches?'
     return self.get (params = params, url = full_url).json()
 
   def player_leaderboard (self, title, season_id, playlist_id, count=200):
