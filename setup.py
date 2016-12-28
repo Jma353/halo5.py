@@ -36,7 +36,7 @@ setup(
     'Operating System :: OS Independent',
     'Programming Language :: Python',
     'Topic :: Internet',
-    'Topic :: Multimedia :: Gaming',
+    'Topic :: Games/Entertainment :: First Person Shooters',
     'Topic :: Software Development :: Libraries :: Python Modules',
   ]
 )
