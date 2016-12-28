@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sub_key="$1"
+export HALO5_SUB_KEY=$sub_key
+nosetests
