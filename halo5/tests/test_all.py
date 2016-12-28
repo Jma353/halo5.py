@@ -133,3 +133,14 @@ def test_service_record_custom ():
 def test_service_record_warzone ():
   result = c.stats.service_record_warzone(['Spitimou'])
   validate_result(result)
+
+# no consistent game/map variants to test c.ugc.get_*_variant() with
+
+def test_list_game_variants ():
+  result = c.ugc.list_game_variants('Spitimou')
+  validate_result(result)
+
+def test_list_map_variants ():
+  result = c.ugc.list_map_variants('Spitimou')
+  validate_result(result)
+  
