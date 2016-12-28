@@ -25,13 +25,13 @@ class Metadata(Base):
     return self.get (url = self.base_url + 'game-base-variants').json()
 
   def game_variants (self, id):
-    return self.get (url = self.base_url + 'game-variants/' + str(id)).json()
+    return self.get (url = self.base_url + 'game-variants/' + id).json()
 
   def impulses (self):
     return self.get (url = self.base_url + 'impulses').json()
 
   def map_variants (self, id):
-    return self.get (url = self.base_url + 'map-variants/' + str(id)).json()
+    return self.get (url = self.base_url + 'map-variants/' + id).json()
 
   def maps (self):
     return self.get (url = self.base_url + 'maps').json()
@@ -43,10 +43,10 @@ class Metadata(Base):
     return self.get (url = self.base_url + 'playlists').json()
 
   def requisition_packs (self, id):
-    return self.get (url = self.base_url + 'requisition-packs/' + str(id)).json()
+    return self.get (url = self.base_url + 'requisition-packs/' + id).json()
 
   def requisitions (self, id):
-    return self.get (url = self.base_url + 'requisitions/' + str(id)).json()
+    return self.get (url = self.base_url + 'requisitions/' + id).json()
 
   def seasons (self):
     return self.get (url = self.base_url + 'seasons').json()
