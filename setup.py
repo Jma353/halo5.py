@@ -1,4 +1,5 @@
 import re
+from setuptools import setup
 
 # Influence for this taken from https://goo.gl/Pi51aC
 version = None
