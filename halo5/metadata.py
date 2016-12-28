@@ -4,7 +4,7 @@ class Metadata(Base):
   """ For fetching the `Metadata` info from the Halo 5 API """
 
   def __init__(self, sub_key):
-    super(Metadata, self).__init__('metadata/h5/metadata/', sub_key)
+    super (Metadata, self).__init__('metadata/h5/metadata/', sub_key)
 
   def campaign_missions (self):
     return self.get (url = self.base_url + 'campaign-missions').json()
@@ -64,4 +64,4 @@ class Metadata(Base):
     return self.get (url = self.base_url + 'vehicles').json()
 
   def weapons (self):
-    return self.get (url = self.base_url + 'weapons').json() 
+    return self.get (url = self.base_url + 'weapons').json()
