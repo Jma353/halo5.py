@@ -7,61 +7,61 @@ class Metadata(Base):
     super (Metadata, self).__init__('metadata/h5/metadata/', sub_key)
 
   def campaign_missions (self):
-    return self.get (url = self.base_url + 'campaign-missions').json()
+    return self.get (url = self.base_url + 'campaign-missions')
 
   def commendations (self):
-    return self.get (url = self.base_url + 'commendations').json()
+    return self.get (url = self.base_url + 'commendations')
 
   def csr_designations (self):
-    return self.get (url = self.base_url + 'csr-designations').json()
+    return self.get (url = self.base_url + 'csr-designations')
 
   def enemies (self):
-    return self.get (url = self.base_url + 'enemies').json()
+    return self.get (url = self.base_url + 'enemies')
 
   def flexible_stats (self):
-    return self.get (url = self.base_url + 'flexible-stats').json()
+    return self.get (url = self.base_url + 'flexible-stats')
 
   def game_base_variants (self):
-    return self.get (url = self.base_url + 'game-base-variants').json()
+    return self.get (url = self.base_url + 'game-base-variants')
 
   def game_variants (self, id):
-    return self.get (url = self.base_url + 'game-variants/' + id).json()
+    return self.get (url = self.base_url + 'game-variants/' + id)
 
   def impulses (self):
-    return self.get (url = self.base_url + 'impulses').json()
+    return self.get (url = self.base_url + 'impulses')
 
   def map_variants (self, id):
-    return self.get (url = self.base_url + 'map-variants/' + id).json()
+    return self.get (url = self.base_url + 'map-variants/' + id)
 
   def maps (self):
-    return self.get (url = self.base_url + 'maps').json()
+    return self.get (url = self.base_url + 'maps')
 
   def medals (self):
-    return self.get (url = self.base_url + 'medals').json()
+    return self.get (url = self.base_url + 'medals')
 
   def playlists (self):
-    return self.get (url = self.base_url + 'playlists').json()
+    return self.get (url = self.base_url + 'playlists')
 
   def requisition_packs (self, id):
-    return self.get (url = self.base_url + 'requisition-packs/' + id).json()
+    return self.get (url = self.base_url + 'requisition-packs/' + id)
 
   def requisitions (self, id):
-    return self.get (url = self.base_url + 'requisitions/' + id).json()
+    return self.get (url = self.base_url + 'requisitions/' + id)
 
   def seasons (self):
-    return self.get (url = self.base_url + 'seasons').json()
+    return self.get (url = self.base_url + 'seasons')
 
   def skulls (self):
-    return self.get (url = self.base_url + 'skulls').json()
+    return self.get (url = self.base_url + 'skulls')
 
   def spartan_ranks (self):
-    return self.get (url = self.base_url + 'spartan-ranks').json()
+    return self.get (url = self.base_url + 'spartan-ranks')
 
   def team_colors (self):
-    return self.get (url = self.base_url + 'team-colors').json()
+    return self.get (url = self.base_url + 'team-colors')
 
   def vehicles (self):
-    return self.get (url = self.base_url + 'vehicles').json()
+    return self.get (url = self.base_url + 'vehicles')
 
   def weapons (self):
-    return self.get (url = self.base_url + 'weapons').json()
+    return self.get (url = self.base_url + 'weapons')

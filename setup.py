@@ -1,7 +1,7 @@
 import re
 from setuptools import setup
 
-# Influence for this taken from https://goo.gl/Pi51aC
+# Influence for this inspired by https://goo.gl/Pi51aC
 version = None
 for line in open('./halo5/__init__.py'):
   m = re.search('__version__\s*=\s*(.*)', line)

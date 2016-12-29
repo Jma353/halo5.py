@@ -8,9 +8,11 @@ c = halo5.client.Client (os.getenv('HALO5_SUB_KEY', ''))
 # Validate success & sleep (1 request / 1 second limit)
 def validate_result (result):
   assert result is not None
-  if isinstance(result, dict):
-    assert 'message' not in result
-  time.sleep(1)
+  try:
+    result.message
+    assert False
+  except:
+      time.sleep(1)
 
 def test_campaign_missions ():
   result = c.metadata.campaign_missions()
@@ -47,7 +49,7 @@ def test_maps ():
 def test_map_variants ():
   maps = c.metadata.maps()
   validate_result(maps)
-  test_id = maps[0]['id']
+  test_id = maps[0].id
   result = c.metadata.map_variants(test_id)
   validate_result(result)
 
@@ -107,8 +109,8 @@ def test_player_leaderboard ():
   validate_result(playlists)
   seasons = c.metadata.seasons()
   validate_result(seasons)
-  test_playlist_id = playlists[0]['id']
-  test_season_id = seasons[0]['id']
+  test_playlist_id = playlists[0].id
+  test_season_id = seasons[0].id
   result = c.stats.player_leaderboard(test_season_id, test_playlist_id)
   validate_result(result)
 
@@ -143,4 +145,3 @@ def test_list_game_variants ():
 def test_list_map_variants ():
   result = c.ugc.list_map_variants('Spitimou')
   validate_result(result)
-  

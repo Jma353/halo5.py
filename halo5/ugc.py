@@ -10,14 +10,14 @@ class UGC(Base):
   # Private
   def _get_variant (self, v_type, player, variant):
     full_url = self.base_url + quote_plus (player) + '/' + v_type + '/' + variant
-    return self.get (url = full_url).json()
+    return self.get (url = full_url)
 
   # Private
   def _list_variants (self, v_type, player, start = 0, count = 25,
   sort = 'modified', order = 'desc'):
     full_url = self.base_url + quote_plus (player) + '/' + v_type + '?'
     params = { 'start' : start, 'count' : count, 'sort' : sort, 'order' : order }
-    return self.get (params = params, url = full_url).json()
+    return self.get (params = params, url = full_url)
 
   def get_game_variant (self, player, variant):
     return self._get_variant('gamevariants', player, variant)
