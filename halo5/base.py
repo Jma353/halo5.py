@@ -14,7 +14,7 @@ class Base(object):
   def __init__(self, url_ext, sub_key):
     self.base_url = 'https://www.haloapi.com/' + url_ext
     self.sub_key = sub_key
-    self.debug = True
+    self.debug = False
 
   def get(self, **kwargs):
     # Prepare request
